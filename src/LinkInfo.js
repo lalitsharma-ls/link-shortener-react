@@ -38,7 +38,9 @@ function LinkInfo(){
    }
 
    const getLinkAnalytics= async()=>{
-      if(shortLink!==""){
+    var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+
+      if(shortLink!=="" && regex.test(shortLink)){
         const requestOptions = {
           method: 'GET'
         };

@@ -36,31 +36,34 @@ const Home=()=>{
   const[originalLink, setOriginalLink]=useState('');
 
   const updateOriginalLink=(e)=>{
-    setOriginalLink(e.target.value);
+   setOriginalLink(e.target.value);
   }
   const generateShortLink= async()=>{
-      if(originalLink!=""){
-          const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify({ link: originalLink })
-          };
-      
-        const response = await fetch('http://api.ttnurl.tk/link/short', requestOptions);
-        const data= await response.json();
-      
-        if (data!=undefined && data.shortenLink!=""){
-      
-          Notiflix.Report.Success(
-            'Link Shorted Successfully',`Generated link is ${data.shortenLink}`,
-            'done');
-            setOriginalLink('');
-        }else{
-          Notiflix.Notify.Failure('Some error occurred. please try again');
-        }
-      }else{
-        Notiflix.Notify.Failure('Please provide a link to short.');
-      }
+    var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+
+    if(originalLink!="" && regex.test(originalLink)){
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ link: originalLink })
+      };
+  
+    const response = await fetch('http://localhost:8082/link/short', requestOptions);
+    const data= await response.json();
+  
+    if (data!=undefined && data.shortenLink!=""){
+  
+      Notiflix.Report.Success(
+        'Link Shorted Successfully',`Generated link is ${data.shortenLink}`,
+        'done');
+        setOriginalLink('');
+    }else{
+      Notiflix.Notify.Failure('Some error occurred. please try again');
+    }
+  }else{
+    Notiflix.Notify.Failure('Please provide a valid link to short.');
+    setOriginalLink('');
+  }
 
   }
   return(
@@ -74,7 +77,7 @@ const Home=()=>{
       
       <div className="col-auto">
         <label className="sr-only" for="inlineFormInput">Name</label>
-        <input type="text" className="form-control mb-2" id="linkInput" 
+        <input type="url" className="form-control mb-2" id="linkInput" 
         style={inputBoxStyle} placeholder="https://www.example.com"
         onChange={updateOriginalLink} value={originalLink}
         />
