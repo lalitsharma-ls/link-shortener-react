@@ -23,7 +23,7 @@ function RedirectComponent(){
             let url='http://api.ttnurl.tk/expand/'
             let response = await fetch(url,requestOptions);
             let data= await response.json();
-            window.location.href=data.originalLink;
+            window.location.href=data.originalLink!==undefined?data.originalLink:"ttnurl.tk";
             
         }
     }
