@@ -20,10 +20,10 @@ function RedirectComponent(){
                 headers: { 'Content-Type': 'application/json'},
                 body: JSON.stringify({ linkId: id,referrer:document.referrer })
               };
-            let url='http://api.ttnurl.tk/expand/'
+            let url='https://api.ttnurl.tk/expand/'
             let response = await fetch(url,requestOptions);
             let data= await response.json();
-            window.location.href=data.originalLink!==undefined?data.originalLink:"http://ttnurl.tk";
+            window.location.href=data.originalLink!==undefined?data.originalLink:"https://ttnurl.tk";
             
         }
     }

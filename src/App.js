@@ -48,7 +48,7 @@ const Home=()=>{
         body: JSON.stringify({ link: originalLink })
       };
   
-    const response = await fetch('http://localhost:8082/link/short', requestOptions);
+    const response = await fetch('https://api.ttnurl.tk/link/short', requestOptions);
     const data= await response.json();
   
     if (data!=undefined && data.shortenLink!=""){

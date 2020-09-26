@@ -45,7 +45,7 @@ function LinkInfo(){
           method: 'GET'
         };
         let urlShortLinkId=shortLink.split('.tk/')[1];
-        let url=`http://api.ttnurl.tk/info/${urlShortLinkId}`
+        let url=`https://api.ttnurl.tk/info/${urlShortLinkId}`
         let response= await fetch(url,requestOptions);
         let data = await response.json();
         
