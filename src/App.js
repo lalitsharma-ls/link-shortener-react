@@ -118,7 +118,7 @@ const Home=()=>{
 
         <div className="card text-center  bg-light border-success mb-3" style={techStackStyle}> 
         <div className="card-body">
-          <h5 className="card-title">Elastic search</h5>
+          <h5 className="card-title">Elastic Search</h5>
           <p className="card-text">Elastic search is the fastest search engine library and it is used to fetch and store the generated links.</p>
         </div>
       </div>
@@ -130,6 +130,49 @@ const Home=()=>{
         <div className="card-body">
           <h5 className="card-title">MySQL</h5>
           <p className="card-text">MySQL is used to log high level information about the links in our system like number of links in system.</p>
+        </div>
+      </div>
+      
+
+        </div>
+      </div>
+    </div>
+    <div>
+      <div className="row justify-content-center">
+        <div className="col-md-4" style={techStackStyle}>
+            <div className="card text-center  border-success bg-light mb-3" style={techStackStyle}> 
+            <div className="card-body">
+              <h5 className="card-title">Nginx Server</h5>
+              <p className="card-text">Nginx server is open source web server which is used to host static website built on react.</p>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4" style={techStackStyle}>
+
+            <div className="card text-center  bg-light border-success mb-3" style={techStackStyle}> 
+            <div className="card-body">
+              <h5 className="card-title">Reverse Proxy</h5>
+              <p className="card-text">As spring boot application runs on port different than 80 so using it to route request internally.</p>
+            </div>
+          </div>
+
+        </div>
+        <div className="col-md-4" style={techStackStyle}>
+
+        <div className="card text-center  bg-light border-success mb-3" style={techStackStyle}> 
+        <div className="card-body">
+          <h5 className="card-title">SPAS</h5>
+          <p className="card-text">SPAS is spring boot as a service, which makes service easy to start, stop and restart on deployment.</p>
+        </div>
+      </div>
+
+        </div>
+        <div className="col-md-4" style={techStackStyle}>
+
+        <div className="card text-center  bg-light border-success mb-3" style={techStackStyle}> 
+        <div className="card-body">
+          <h5 className="card-title">SSL Certificate</h5>
+          <p className="card-text">SSL Certificate is used to create an encrypted channel between client and server to prevent eavesdropping.</p>
         </div>
       </div>
       
