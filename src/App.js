@@ -161,8 +161,8 @@ const Home=()=>{
 
         <div className="card text-center  bg-light border-success mb-3" style={techStackStyle}> 
         <div className="card-body">
-          <h5 className="card-title">SPAS</h5>
-          <p className="card-text">SPAS is spring boot as a service, which makes service easy to start, stop and restart on deployment.</p>
+          <h5 className="card-title">SBAS</h5>
+          <p className="card-text">SBAS is spring boot as a service, which makes service easy to start, stop and restart on deployment.</p>
         </div>
       </div>
 
